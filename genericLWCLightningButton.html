@@ -1,0 +1,77 @@
+<template>
+  <div class="slds-box slds-theme_default expand">
+    <span class="slds-text-heading_medium slds-align_absolute-center "
+      ><b>LIGHTNING WEB COMPONENT</b>
+    </span>
+    <br />
+    <div class="slds-box slds-theme_default expand">
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-5">
+          <span style="height: 100%;">
+            <lightning-card title="Live View" icon-name="standard:forecasts" style="height: 100%;">
+              <lightning-button
+                variant={variantValue}
+                label={labelValue}
+                title={titleValue}
+                disabled={disabledValue}
+                class="slds-m-left_x-small"
+              ></lightning-button>
+            </lightning-card>
+          </span>
+        </div>
+        <div class="slds-col slds-size_3-of-5">
+          <span
+            style="height: 100%;">
+            <lightning-card title="Code View" icon-name="utility:table" style="height: 100%;">
+                <div  class="slds-p-horizontal_small slds-text-heading_medium slds-p-top_x-small slds-p-around_medium">
+              <xmp>
+                    <lightning-button variant="{variantValue}" label="{labelValue}" title="{titleValue}" disabled="{disabledValue}"/>
+                </xmp>
+                </div>
+            </lightning-card>
+          </span>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+          <span style="height: 100%;">
+            <lightning-card
+              title="Attributes Options"
+              icon-name="standard:record"
+              style="height: 100%;">
+              <lightning-button-icon
+                icon-name="utility:loop"
+                variant="border-filled"
+                alternative-text="Reset"
+                slot="actions"
+              >
+              </lightning-button-icon>
+              <div class="slds-p-around_medium">
+                <lightning-combobox
+                  name="variant"
+                  label="Variant"
+                  value={value}
+                  placeholder="Select Variant"
+                  options={options}
+                  onchange={handleChange}
+                ></lightning-combobox>
+                <lightning-input
+                  type="text"
+                  label="Label"
+                  value={labelValue}
+                  onchange={handleLabelValueChange}
+                ></lightning-input>
+                <lightning-input
+                  type="text"
+                  label="Title"
+                  value={titleValue}
+                  onchange={handleTitleValueChange}
+                ></lightning-input>
+                <br/>
+                <lightning-input type="toggle" label="Disabled" onchange={disabledToggleValue} message-toggle-inactive= '' message-toggle-active= ''></lightning-input>
+              </div>
+            </lightning-card>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
