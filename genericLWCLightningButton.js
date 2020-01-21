@@ -2,7 +2,7 @@ import { LightningElement, track, api } from "lwc";
 
 export default class GenericLightningButtonLWC extends LightningElement {
   @track value = "success";
-  @api variantValue = "success";
+  @track variantValue = "success";
   @api labelValue = "My Label";
   @api titleValue = "My Title";
   @track disabledValue = false;
@@ -39,5 +39,11 @@ export default class GenericLightningButtonLWC extends LightningElement {
   }
   disabledToggleValue(event) {
     this.disabledValue = event.target.checked;
+  }
+  resetValues() {
+    this.variantValue = "success";
+    this.labelValue = "My Label";
+    this.titleValue = "My Title";
+    this.disabledValue = false;
   }
 }
