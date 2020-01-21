@@ -41,6 +41,7 @@
                 icon-name="utility:loop"
                 variant="border-filled"
                 alternative-text="Reset"
+                onclick={resetValues}
                 slot="actions"
               >
               </lightning-button-icon>
@@ -48,7 +49,7 @@
                 <lightning-combobox
                   name="variant"
                   label="Variant"
-                  value={value}
+                  value={variantValue}
                   placeholder="Select Variant"
                   options={options}
                   onchange={handleChange}
@@ -66,7 +67,7 @@
                   onchange={handleTitleValueChange}
                 ></lightning-input>
                 <br/>
-                <lightning-input type="toggle" label="Disabled" onchange={disabledToggleValue} message-toggle-inactive= '' message-toggle-active= ''></lightning-input>
+                <lightning-input type="toggle" label="Disabled" checked={disabledValue} onchange={disabledToggleValue} message-toggle-inactive= '' message-toggle-active= ''></lightning-input>
               </div>
             </lightning-card>
           </span>
