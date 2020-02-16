@@ -1,0 +1,62 @@
+<template>
+    <div class="slds-box slds-theme_default expand">
+        <span class="slds-text-heading_medium slds-align_absolute-center "><b>LIGHTNING WEB COMPONENT - SPINNER</b>
+        </span>
+        <br />
+        <div class="slds-box slds-theme_default expand">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-5">
+                    <div if:false={isInverse}>
+                        <lightning-card title="Live View" icon-name="standard:forecasts">
+                            <br /><br /><br /><br /><br /><br />
+                            <lightning-spinner variant={variantValue} size={sizeofSpinner} style="margin-top:20%">
+                            </lightning-spinner>
+                        </lightning-card>
+                    </div>
+                    <div if:true={isInverse}>
+                        <lightning-card title="Live View" icon-name="standard:forecasts">
+                            <br /><br /><br /><br /><br /><br />
+                            <lightning-spinner variant={variantValue} size={sizeofSpinner}
+                                style="margin-top:20%;background-color: lightgrey;">
+                            </lightning-spinner>
+                        </lightning-card>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_3-of-5">
+                    <span style="height: 100%;">
+                        <lightning-card title="Code View" icon-name="utility:table" style="height: 100%;">
+                            <div
+                                class="slds-p-horizontal_small slds-text-heading_medium slds-p-top_x-small slds-p-around_medium">
+                                <xmp>
+                                    <lightning-spinner variant="{variantValue}" size="{sizeofSpinner}"
+                                        alternative-text="{labelValue}">
+                                    </lightning-spinner>
+                                </xmp>
+                            </div>
+                        </lightning-card>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <span style="height: 100%;">
+                        <lightning-card title="Attributes Options" icon-name="standard:record" style="height: 100%;">
+                            <lightning-button-icon icon-name="utility:loop" variant="border-filled"
+                                alternative-text="Reset" onclick={resetValues} slot="actions">
+                            </lightning-button-icon>
+                            <div class="slds-p-around_medium">
+                                <lightning-combobox name="size" label="Size" value={sizeofSpinner}
+                                    placeholder="Select Size" options={sizeOptions} onchange={handleSizeChange}>
+                                </lightning-combobox>
+                                <lightning-combobox name="variant" label="Variant" value={variantValue}
+                                    placeholder="Select Variant" options={variantOptions}
+                                    onchange={handleVariantChange}>
+                                </lightning-combobox>
+                                <lightning-input type="text" label="Alternate Text" value={labelValue}
+                                    onchange={handleLabelValueChange}></lightning-input>
+                            </div>
+                        </lightning-card>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
